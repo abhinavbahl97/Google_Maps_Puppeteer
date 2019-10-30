@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 puppeteer.launch({headless:false}).then(async browser => {
   const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 800 })
+  await page.setViewport({ width: 1280, height: 1000 })
   await page.goto('https://www.google.com/maps');
   const title = await page.title()
   console.log(title)
@@ -18,7 +18,13 @@ puppeteer.launch({headless:false}).then(async browser => {
  await page.keyboard.type('11717 Exploration Lane');
  await page.waitFor(5000);
  page.keyboard.press('Enter');
- await page.waitFor(20000);
+ await page.waitFor(5000);
+ await page.click('#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-directions-options.white-foreground.noprint > button.section-directions-options-link > span:nth-child(1)')
+ //await page.mouse.click();
+ await page.waitFor(5000);
+ await page.click('#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-directions-options.white-foreground.noprint > div.section-directions-options-route-options.route-options-card > div > div.directions-options-drive > div:nth-child(1) > label:nth-child(6)')
+ await page.waitFor(10000)
+
  //await page.type(String.fromCharCode(13));  // Enter Keycode
 
 //save our html in a file

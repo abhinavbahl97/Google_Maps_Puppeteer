@@ -8,14 +8,14 @@ puppeteer.launch({headless:false}).then(async browser => {
   const html = await page.content();
 
  await page.focus('#searchboxinput')
- await page.keyboard.type('8190 Strawberry Lane');
+ await page.keyboard.type('Destination Address Here');
  await page.waitFor(5000);
  page.keyboard.press('Enter');
  await page.waitFor(5000);
  page.click('#pane > div > div.widget-pane-content.scrollable-y > div > div > div.section-layout.section-layout-space-between.section-layout-flex-vertical.section-layout-flex-horizontal > div.iRxY3GoUYUY__actionicon.iRxY3GoUYUY__actionicon-text.iRxY3GoUYUY__promoted.iRxY3GoUYUY__high-contrast > div')
  await page.waitFor(5000);
  await page.focus('#sb_ifc51');
- await page.keyboard.type('11717 Exploration Lane');
+ await page.keyboard.type('Start Address Here');
  await page.waitFor(5000);
  page.keyboard.press('Enter');
  await page.waitFor(5000);
